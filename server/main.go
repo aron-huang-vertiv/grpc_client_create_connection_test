@@ -37,8 +37,9 @@ func NewFooService() *FooService {
 }
 
 func (f FooService) Foo(ctx context.Context, req *foo.FooReq) (*foo.FooResp, error) {
+	log.Printf("Hi,%v-%v", req.Name, req.Count)
 	return &foo.FooResp{
-		Msg: "Hi "+ req.Name,
+		Msg:   "Hi " + req.Name,
 		Count: req.Count,
 	}, nil
 }
