@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package foo;
+
+option go_package = "./foo";
+
+message FooReq {
+    string name = 1;
+    int64 count = 2;
+}
+
+message FooResp {
+    string msg = 1 ;
+    int64 count = 2 ;
+}
+
+
+service FooService {
+    rpc Foo(FooReq) returns (FooResp);
+}
